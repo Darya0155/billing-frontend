@@ -1,9 +1,13 @@
 node {    
       def app     
+       tools {
+        docker 'latest'        
+    }
       stage('Clone repository') {               
              
             checkout scm    
       }     
+     
       stage('Build image') {         
        
             app = docker.build("arya786/test")    
