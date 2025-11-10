@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+input {
+    width: 250px;           /* Sets the width */
+    padding: 12px 15px;     /* Adds space inside the box (top/bottom, left/right) */
+    font-size: 16px;        /* Changes the text size */
+    border: 2px solid #ccc; /* Sets a light gray border */
+    border-radius: 8px;     /* Rounds the corners */
+    outline: none;          /* Removes the default blue focus outline (we'll add a better one later) */
+    font-family: Arial, sans-serif; /* Changes the font */
+}
+input:focus {
+    border-color: #66afe9;  /* Changes border color on focus */
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Adds a subtle glow effect */
+}
+.invalid {
+    border-color: #e74c3c;  /* Changes border color to red for invalid input */
+    background-color: #fceae9; /* Light red background for invalid input */
+}
+
+button {
+    padding: 10px 20px;      /* Adds space inside the button */
+    font-size: 16px;         /* Changes the text size */
+    color: #fff;             /* Sets text color to white */
+    background-color: #28a745; /* Green background */
+    border: none;            /* Removes default border */
+    border-radius: 5px;      /* Rounds the corners */
+    cursor: pointer;         /* Changes cursor to pointer on hover */
+    font-family: Arial, sans-serif; /* Changes the font */
+}
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+button:disabled {
+    background-color: #6c757d; /* Gray background for disabled button */
+    cursor: not-allowed;       /* Changes cursor to not-allowed */
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
