@@ -1,0 +1,17 @@
+# version: '3.8'
+
+services:
+  angular-app:
+    container_name: billing-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: arya786/billing-frontend:latest
+    ports:
+      - '4200:80'
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
+    # command: ng serve --host 0.0.0.0 --port 4200 --disable-host-check
+    # environment:
+    #   - CHOKIDAR_USEPOLLING=true # For hot reloading in some environments
