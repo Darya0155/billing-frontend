@@ -1,17 +1,16 @@
 node {    
       def app     
-       tools {
-        docker 'latest'        
-    }
+       
       stage('Clone repository') {               
              
             checkout scm    
       }     
-     
+     docker{ 
       stage('Build image') {         
        
             app = docker.build("arya786/test")    
        }     
+     }
       stage('Test image') {           
             app.inside {            
              
