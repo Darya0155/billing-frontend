@@ -1,26 +1,16 @@
-node {    
-      def app     
-       
-      stage('Clone repository') {               
-             
-            checkout scm    
-      }     
-     docker{ 
-      stage('Build image') {         
-       
-            app = docker.build("arya786/test")    
-       }     
-     }
-      stage('Test image') {           
-            app.inside {            
-             
-             sh 'echo "Tests passed"'        
-            }    
-        }     
-       stage('Push image') {
-                                                  docker.withRegistry('https://registry.hub.docker.com', 'git') {            
-       app.push("${env.BUILD_NUMBER}")            
-       app.push("latest")        
-              }    
-           }
+podTemplate {
+    node(kubeAgent){
+        stage('Build') {
+            echo 'Building...'
+            // Add build steps here
         }
+        stage('Test') {
+            echo 'Testing...'
+            // Add test steps here
+        }
+        stage('Deploy') {
+            echo 'Deploying...'
+            // Add deploy steps here
+        }
+    }
+}
